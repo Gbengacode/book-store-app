@@ -23,7 +23,7 @@ Bookstore
 
 
 ## Demo
-- [live demo] (https://deploy-preview-3--book-store-app1.netlify.app/)
+- [live demo] (https://deploy-preview-2--book-store-app1.netlify.app/)
 ## Getting Started
 
 
