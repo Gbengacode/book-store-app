@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBookApi } from '../redux/books/books';
 
 const Form = () => {
-  const [author, setAuthor] = useState('');
+  const categories = ['Love', 'Horror', 'Action', 'Classic'];
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
-  const [authorError, setAuthorError] = useState('');
-  const [titleError, setTitleError] = useState('');
+  const [category, setCategory] = useState(categories[0]);
+  const [titleError, setTitleError] = useState();
   const dispatch = useDispatch();
-  const categories = ['Beauty', 'Movie'];
-  const handleChangeAuthor = (e) => {
-    setAuthor(e.target.value);
-    setAuthorError('');
-  };
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
@@ -32,43 +26,26 @@ const Form = () => {
       error = true;
       setTitleError('Please enter your title');
     }
-    if (author.trim() === '') {
-      error = true;
-      setAuthorError('Please enter your author');
-    }
+
     if (!error) {
       const formData = {
-        id: uuidv4(), title, author, category,
+        item_id: uuidv4(), title, category,
       };
-      dispatch(addBook(formData));
+      dispatch(addBookApi(formData));
       setTitle('');
-      setAuthor('');
       setCategory('');
       setTitleError('');
-      setAuthorError('');
     }
   };
+
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
+
         <div className="form-group">
           <input
             type="text"
-            placeholder="Enter name of author"
-            id="author"
-            onChange={handleChangeAuthor}
-            value={author}
-            required
-          />
-          <span>
-            {authorError}
-            {' '}
-          </span>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Enter name of title"
+            placeholder="Enter title of book"
             id="title"
             onChange={handleChangeTitle}
             value={title}
@@ -83,7 +60,7 @@ const Form = () => {
             ))
           }
         </select>
-        <button type="button" className="addBtn" onClick={handleSubmit}>Add Book</button>
+        <input type="submit" value="Add Book" className="addBtn" onClick={handleSubmit} />
 
       </form>
     </div>

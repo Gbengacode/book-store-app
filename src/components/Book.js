@@ -1,30 +1,29 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBookApi } from '../redux/books/books';
 
 const Book = ({
-  id, author, title, category,
+  item_id, title, category,
 }) => {
   const dispatch = useDispatch();
   const handleDelete = () => {
-    dispatch(removeBook(id));
+    dispatch(removeBookApi(item_id));
   };
   return (
     <>
 
       <li className="list-book">
         <p>{title}</p>
-        <p>{author}</p>
         <p>{category}</p>
-        <button type="button" className="delBtn" onClick={() => { handleDelete(id); }}>Remove</button>
+        <button type="button" className="delBtn" onClick={() => { handleDelete(item_id); }}>Remove</button>
       </li>
     </>
   );
 };
 Book.propTypes = {
-  id: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  item_id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
 };
