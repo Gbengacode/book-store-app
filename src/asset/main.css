@@ -1,5 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  padding: 20px;
+}
+
+nav > ul {
+  display: flex;
+  gap: 20px;
+}
+
+.form-container {
+  display: grid;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-container > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > form input,
+select {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.addBtn {
+  width: 100px;
+  height: 40px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 6px;
+  background: #28a745;
+  color: #fff;
+}
+
+.delBtn {
+  width: 70px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: #dc3545;
+  color: #fff;
+  margin-top: 10px;
+}
+
+ul > .list-book {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+}
+
+.list-book p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+span {
+  color: #dc3545;
+}
+
+h2 {
+  text-align: center;
 }

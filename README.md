@@ -19,6 +19,11 @@ Bookstore
     - Redux
 - Text editor
     - VSCode
+
+
+
+## Demo
+- [live demo] (https://deploy-preview-2--book-store-app1.netlify.app/)
 ## Getting Started
 
 
