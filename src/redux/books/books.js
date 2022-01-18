@@ -69,7 +69,7 @@ const reducer = (state = initialState, action) => {
       return state.filter((book) => book.item_id !== action.payload);
 
     case FETCH_BOOK:
-      return [...state, ...action.payload];
+      return action.payload;
 
     default:
       return state;
