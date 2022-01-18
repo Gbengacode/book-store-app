@@ -3,7 +3,7 @@
 # Project Name
 Bookstore
 
-
+![screenshot](./pic.png)
 
 # Project Description
 
