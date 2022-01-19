@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBookApi } from '../redux/books/books';
+import { FormContainer, Select } from '../asset/formStyles';
 
 const Form = () => {
   const categories = ['Love', 'Horror', 'Action', 'Classic'];
@@ -39,31 +40,34 @@ const Form = () => {
   };
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
+    <FormContainer>
+      <h2>Add New Book</h2>
+      <form>
 
         <div className="form-group">
           <input
             type="text"
-            placeholder="Enter title of book"
+            placeholder="Book title"
             id="title"
             onChange={handleChangeTitle}
             value={title}
             required
           />
+          <span className="error">{titleError}</span>
         </div>
-        <span>{titleError}</span>
-        <select onChange={handleChangeCategory} value={category}>
-          {
+        <div className="form-group">
+          <Select onChange={handleChangeCategory} value={category} className="category-select">
+            {
             categories.map((category) => (
               <option key={category} value={category}>{category}</option>
             ))
           }
-        </select>
+          </Select>
+        </div>
         <input type="submit" value="Add Book" className="addBtn" onClick={handleSubmit} />
-
       </form>
-    </div>
+    </FormContainer>
+
   );
 };
 export default Form;

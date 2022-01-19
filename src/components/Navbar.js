@@ -1,15 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { FaRegUserCircle } from 'react-icons/fa';
+import {
+  Header,
+  Nav,
+  NavContainer,
+  NavLogo,
+  NavMenu,
+  NavItem,
+  NavLink,
+  NavUser,
+
+} from '../asset/headerStyles';
 
 const Navbar = () => (
-  <>
-    <nav>
-      <ul>
-        <li><Link to="/">Books</Link></li>
-        <li><Link to="/categories">Categories</Link></li>
-      </ul>
-    </nav>
-  </>
+  <Header>
+    <Nav>
+      <NavContainer>
+
+        <NavMenu>
+          <NavLogo to="/">BookStore CMS</NavLogo>
+          <NavItem>
+            <NavLink to="/">
+              Books
+            </NavLink>
+            <NavLink to="/categories">Categories</NavLink>
+          </NavItem>
+        </NavMenu>
+        <NavUser to="/"><FaRegUserCircle /></NavUser>
+      </NavContainer>
+    </Nav>
+  </Header>
+
 );
 
 export default Navbar;

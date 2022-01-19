@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Categories = () => (
-  <div>
+  <div className="construction">
     <h2>Categories</h2>
     <p>Under construction</p>
   </div>
