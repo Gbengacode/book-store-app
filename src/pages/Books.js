@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Form from '../components/Form';
 import Book from '../components/Book';
 import { fetchBookApi } from '../redux/books/books';
+import { CardsContainer } from '../asset/CardStyles';
 
 const BookList = () => {
   const books = useSelector((state) => state.books);
@@ -12,8 +13,8 @@ const BookList = () => {
   }, [dispatch]);
   return (
     <div>
-      <h2>List of Books</h2>
-      <ul>
+
+      <CardsContainer>
         {books.map((book) => (
           <Book
             key={book.item_id}
@@ -22,7 +23,7 @@ const BookList = () => {
             category={book.category}
           />
         ))}
-      </ul>
+      </CardsContainer>
       <Form />
     </div>
   );
