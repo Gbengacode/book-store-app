@@ -23,7 +23,7 @@ const Navbar = () => (
             <NavLink to="/">
               Books
             </NavLink>
-            <NavLink to="/categories" activeClassName="any">Categories</NavLink>
+            <NavLink to="/categories">Categories</NavLink>
           </NavItem>
         </NavMenu>
         <NavUser to="/"><FaRegUserCircle /></NavUser>
