@@ -100,7 +100,7 @@ flex-direction: row;
 flex: 1;
 gap: 20px;
 @media (max-width: 768px) {
-  gap: 41px;
+  gap: 60px;
 }
 `;
 

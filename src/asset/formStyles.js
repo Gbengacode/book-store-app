@@ -83,7 +83,7 @@ form {
       @media (max-width: 768px) {
         width: 100%;
         padding: 10px 5px;
-        margin: 10px auto;
+        margin: 20px auto;
       }
     
   }
