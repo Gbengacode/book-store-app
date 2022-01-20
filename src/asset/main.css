@@ -24,8 +24,22 @@ a {
   text-decoration: none;
 }
 
+/* color scheme */
+
+:root {
+  --bgwhite: #fff;
+  --bgblue: #0290ff;
+  --bgdark: #121212;
+  --bglightdark: #888;
+  --bgfaintdark: #8e8282;
+}
+
 .error {
   color: #dc3545;
+  display: block;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
 .construction h2 {

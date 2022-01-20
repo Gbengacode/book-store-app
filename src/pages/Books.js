@@ -11,10 +11,13 @@ const BookList = () => {
   useEffect(() => {
     dispatch(fetchBookApi());
   }, [dispatch]);
+
   return (
+
     <div>
 
       <CardsContainer>
+        {!books.length && <h2>No New Book</h2>}
         {books.map((book) => (
           <Book
             key={book.item_id}

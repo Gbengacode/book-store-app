@@ -4,6 +4,21 @@ export const CardsContainer = styled.div`
 background: #fff;
 margin: 40px;
 max-width: 100%;
+h2 {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    -webkit-letter-spacing: -0.18px;
+    -moz-letter-spacing: -0.18px;
+    -ms-letter-spacing: -0.18px;
+    letter-spacing: -0.18px;
+    text-align: center;
+    color: var(--bglightdark);
+
+}
 `;
 
 export const CardDetail = styled.div`
@@ -13,7 +28,12 @@ width: 100%;
 border: 1px solid #e8e8e8;
 margin-top: 40px;
 padding: 15px 20px;
-height: 100%`;
+height: 100%;
+@media(max-width: 768px) {
+  display: flex;
+  flex-direction: column;
+}
+`;
 
 export const CardText = styled.div`
 flex: 2;
@@ -101,6 +121,10 @@ h2 {
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
+  color: var(--bgdark);
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 h3 {
     margin-top: -10px;
@@ -128,7 +152,7 @@ h3 {
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #121212;
+    color: var(--bgdark);
     text-transform: uppercase;
 }
 h4 {
@@ -139,7 +163,7 @@ h4 {
     font-style: normal;
     line-height: normal;
     letter-spacing: -0.4px;
-    color: #121212;
+    color: var(--bgdark);
 }
 
 .progress {
@@ -157,5 +181,11 @@ h4 {
   background-color: #0290ff;
   border: none;
   text-transform: uppercase;
+
+  &:hover { 
+    background: #fff;
+    border: 1px solid #0290ff;
+    color: var(--bgblue);
+  }
 }
 `;

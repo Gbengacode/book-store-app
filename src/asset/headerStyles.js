@@ -14,7 +14,10 @@ border-bottom: 0.5px solid #e8e8e8;
 export const NavContainer = styled.div`
 display: flex;
 padding: 20px 40px;
-justify-content: space-between;`;
+justify-content: space-between;
+@media (max-width: 768px){
+   padding: 20px 30px;
+}`;
 
 export const NavLogo = styled(NavLinka)`
   font-family: 'Montserrat', sans-serif;
@@ -25,13 +28,16 @@ export const NavLogo = styled(NavLinka)`
   line-height: normal;
   letter-spacing: normal;
   color: #0290ff;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
   
 `;
 
 export const NavMenu = styled.ul`
 display: flex;
 justify-content: space-between;
-gap: 50px`;
+gap: 50px;`;
 
 export const NavItem = styled.li`
 padding-top: 10px`;
@@ -44,9 +50,18 @@ font-stretch: normal;
 font-style: normal;
 line-height: normal;
 letter-spacing: 1.9px;
-color: #121212;
+color: var(--bgdark);
 padding: 20px;
 text-transform: uppercase;
+@media (max-width: 768px) {
+  &:nth-child(1){
+    display: none;
+  };
+  &:nth-child(2){
+    display: none;
+  }
+
+}
 &:nth-child(2){
   opacity: 50%;
 }
@@ -61,6 +76,18 @@ text-transform: uppercase;
 export const NavUser = styled(NavLinka)`
 font-size: 40px;
 color: #0290ff;
+@media (max-width: 768px) {
+  display: none;
+}
 }
 
+`;
+
+export const MobileIcon = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    font-size: 1.0rem;
+    color: var(--bgblue);
+    display: block;
+  }
 `;

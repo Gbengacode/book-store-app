@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -12,11 +12,15 @@ import 'react-circular-progressbar/dist/styles.css';
 const Book = ({
   item_id, title, category,
 }) => {
+  const [percentage, setPercentage] = useState(60);
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(removeBookApi(item_id));
   };
-  const percentage = 60;
+
+  const handleProgress = () => {
+    setPercentage((prev) => (prev + 20));
+  };
   return (
     <>
 
@@ -41,7 +45,7 @@ const Book = ({
         <CardChapter>
           <h3>Current Chapter</h3>
           <h4>Chapter 17</h4>
-          <button type="button" className="progress">Update Progress</button>
+          {percentage === 100 ? <button type="button" disabled className="progress">Completed</button> : <button type="button" onClick={handleProgress} className="progress">Update Progress</button>}
         </CardChapter>
       </CardDetail>
     </>
