@@ -107,7 +107,7 @@ export const Select = styled.select`
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.15px;
-  color: #c4c4c4;
+  color: var(--bgfaintdark);
   border: 1px solid #e8e8e8;
   @media (max-width: 768px) {
     width: 100%;
