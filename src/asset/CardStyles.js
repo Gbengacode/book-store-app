@@ -99,12 +99,18 @@ display: flex;
 flex-direction: row;
 flex: 1;
 gap: 20px;
+@media (max-width: 768px) {
+  gap: 60px;
+}
 `;
 
 export const CircularContainer = styled.div`
 margin-top: 10px;
 width: 80px;
 align-self: center;
+@media (max-width: 768px) {
+  width: 60px;
+}
  
 `;
 
